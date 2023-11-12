@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         
     }
 
@@ -39,7 +39,6 @@ public class Spawner : MonoBehaviour
         {
             foreach (GameObject body in particles) {
                 Destroy(body);
-                
             }
             particles.Clear();
         }
@@ -52,6 +51,6 @@ public class Spawner : MonoBehaviour
 
     public void SpawnParticle()
     {
-        GameObject test = Instantiate(Prefub,transform.position, UnityEngine.Quaternion.identity);
+        particles.Add(Instantiate(Prefub, transform.position, UnityEngine.Quaternion.identity));
     }
 }
