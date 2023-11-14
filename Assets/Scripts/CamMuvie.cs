@@ -115,8 +115,9 @@ public class CamMuvie : MonoBehaviour
         cosX = (float)Math.Cos(transform.eulerAngles.x);
         cosY = (float)Math.Cos(transform.eulerAngles.y);
         cosZ = (float)Math.Cos(transform.eulerAngles.z);
-        //transform.position = Camera.main.transform.TransformDirection(transform.position + motionVector);
-        transform.position = new Vector3(transform.position.x + cosY * motionVector.x, 0, 0); 
+
+        transform.position = (transform.position + motionVector);
+        //.position = new Vector3(transform.position.x + cosY * motionVector.x, 0, 0); 
         // нужно расчитывать позицию камеры умножая косинусы синусы хуинусы на вектор и прибавлять текущуюю позицию
 
 
