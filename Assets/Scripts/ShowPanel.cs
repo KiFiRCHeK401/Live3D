@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Overlays;
+
 using UnityEngine;
 
-[AddComponentMenu ("My component/Panel")]
+
 public class ShowPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject panel;
-    public bool open;
+    public bool open = true;
     void Start()
     {
         
