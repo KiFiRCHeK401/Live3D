@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CamMuvie : MonoBehaviour
 {
+    public static int test;
 
     float Speed = 0.04f;
     float maxSpeed = 0.04f;

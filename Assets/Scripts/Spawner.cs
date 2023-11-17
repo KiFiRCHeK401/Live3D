@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public double deltaTime = 0;
+    public static double deltaTime = 0;
     public GameObject Prefub;
-    public HashSet<GameObject> particles = new HashSet<GameObject>();
 
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,34 +25,38 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         
-        if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; }
+        if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; } // задержка
         if (Input.anyKey) { deltaTime = 0; }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))           // создание
         {
-            particles.Add(Instantiate(Prefub, transform.position, UnityEngine.Quaternion.identity));
+            SpawnParticle(Color.red, "red");
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+
+        if (Input.GetKey(KeyCode.LeftShift))                            //удаление последнего
         {
-            Destroy(particles.Last());
-            particles.Remove(particles.Last());
+            ApplyAcceleration.DeleteParticle();
         }
-        if ( Input.GetKey(KeyCode.LeftControl))
+
+        if (Input.GetKey(KeyCode.LeftControl))                         //удаление всех обьектов
         {
-            foreach (GameObject body in particles) {
-                Destroy(body);
-            }
-            particles.Clear();
+
+            ApplyAcceleration.DeleteAllParticle();
+
         }
     }
 
 
-    
 
 
 
-    public void SpawnParticle()
-    {
-        particles.Add(Instantiate(Prefub, transform.position, UnityEngine.Quaternion.identity));
+
+    public void SpawnParticle(Color clr, string str)
+    { 
+
+
+        ApplyAcceleration.addParticle(Instantiate(Prefub,transform.position, UnityEngine.Quaternion.identity), clr, str);
+
+
     }
 }

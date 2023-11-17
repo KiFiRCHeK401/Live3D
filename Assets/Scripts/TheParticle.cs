@@ -7,20 +7,37 @@ using UnityEngine;
 public class TheParticle : MonoBehaviour
 {
 
-    //GameObject obj;
+    private GameObject obj;
+    private Color ColorType;
+    public HashSet<Rigidbody> IncludedRigidbodies = new HashSet<Rigidbody>();
 
-    
-    //public TheParticle(int type,Color color)
+
+
+    public TheParticle(GameObject obj, Color ColorType,string typeName)
+    {
+        this.obj = obj;
+        //this.ColorType = ColorType;
+        //this.GetComponent<Renderer>().material.SetColor(typeName, ColorType);
+    }
+    ~TheParticle()
+    {
+        //сообщение об удалении частицы
+    }
+
+
+    public void DeleteParticle()
+    {
+        Destroy(this.obj);
+    }
+
+
+
+    //public void SetType(Color ColorType)
     //{
-    //    this.type = type;
-    //    this.color = color;
+    //    this.ColorType = ColorType;
+    //    this.GetComponent<Renderer>().material.SetColor("red", Color.red);
 
     //}
 
-
-    //public void testMethod()
-    //{
-    //    Console.WriteLine("метод вызван");
-    //}
 
 }

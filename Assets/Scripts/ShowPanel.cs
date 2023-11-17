@@ -8,7 +8,7 @@ public class ShowPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject panel;
-    public bool open = true;
+    public static bool open = true;
     void Start()
     {
         

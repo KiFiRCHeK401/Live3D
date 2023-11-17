@@ -640,6 +640,9 @@ MonoBehaviour:
   cosX: 0
   cosY: 0
   cosZ: 0
+  sinX: 0
+  sinY: 0
+  sinZ: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,19 +887,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1209132723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: ee7c910dc2b5b534db93b3718815a27c, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SpawnParticle
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1209132723
 MonoBehaviour:
   m_ObjectHideFlags: 0
