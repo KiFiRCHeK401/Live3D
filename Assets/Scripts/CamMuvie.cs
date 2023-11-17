@@ -47,7 +47,7 @@ public class CamMuvie : MonoBehaviour
 
 
 
-    private void CamControl() //оброботка нажатий кнопок управления камерой
+    private void CamControl() //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     {
         if (!Input.anyKey)
@@ -96,10 +96,10 @@ public class CamMuvie : MonoBehaviour
     {
         
         lastMousePos = Input.mousePosition - lastMousePos;
-        lastMousePos = new Vector3(-lastMousePos.y * camSens, lastMousePos.x * camSens, 0);                                 //знаю что так делать не хорошо
-        lastMousePos = new Vector3(transform.eulerAngles.x + lastMousePos.x, transform.eulerAngles.y + lastMousePos.y, 0);  //но я сделал
+        lastMousePos = new Vector3(-lastMousePos.y * camSens, lastMousePos.x * camSens, 0);                                 //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        lastMousePos = new Vector3(transform.eulerAngles.x + lastMousePos.x, transform.eulerAngles.y + lastMousePos.y, 0);  //пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         transform.eulerAngles = lastMousePos;
-        lastMousePos = Input.mousePosition;                                                                                 //и никто меня не остановил
+        lastMousePos = Input.mousePosition;                                                                                 //пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
     private void CamMuve()
     {
@@ -128,7 +128,7 @@ public class CamMuvie : MonoBehaviour
         //transform.position = new Vector3(x, y, z);
 
         //.position = new Vector3(transform.position.x + cosY * motionVector.x, 0, 0); 
-        // нужно расчитывать позицию камеры умножая косинусы синусы хуинусы на вектор и прибавлять текущуюю позицию
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 
 

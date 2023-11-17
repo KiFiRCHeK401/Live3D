@@ -13,20 +13,22 @@ public class TheParticle : MonoBehaviour
 
 
 
-    public TheParticle(GameObject obj, Color ColorType,string typeName)
+    public TheParticle(GameObject objct, Color ColorType,string typeName)
     {
-        this.obj = obj;
-        //this.ColorType = ColorType;
+        this.obj = objct;
+        this.ColorType = ColorType;
         //this.GetComponent<Renderer>().material.SetColor(typeName, ColorType);
     }
     ~TheParticle()
     {
-        //сообщение об удалении частицы
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
 
     public void DeleteParticle()
     {
+
+        IncludedRigidbodies.Clear();
         Destroy(this.obj);
     }
 

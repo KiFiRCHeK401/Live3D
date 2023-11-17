@@ -25,23 +25,24 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         
-        if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; } // задержка
+        if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; } // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (Input.anyKey) { deltaTime = 0; }
 
-        if (Input.GetKey(KeyCode.Space))           // создание
+        if (Input.GetKey(KeyCode.Space))           // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ          //Р”РѕР±Р°РІРёС‚СЊ С‡Р°СЃС‚РёС†Сѓ
         {
+            
             SpawnParticle(Color.red, "red");
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))                            //удаление последнего
+        if (Input.GetKey(KeyCode.LeftShift))                            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         {
-            ApplyAcceleration.DeleteParticle();
+           ParticleController.DeleteLastParticle();                        //СѓРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµР№ С‡Р°СЃС‚РёС†С‹
         }
 
-        if (Input.GetKey(KeyCode.LeftControl))                         //удаление всех обьектов
+        if (Input.GetKey(KeyCode.LeftControl))                         //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         {
 
-            ApplyAcceleration.DeleteAllParticle();
+            ParticleController.DeleteAllParticle();                     //СѓРґР°Р»РµРЅРёРµ РІСЃРµС… С‡Р°СЃС‚РёС†
 
         }
     }
@@ -53,9 +54,9 @@ public class Spawner : MonoBehaviour
 
     public void SpawnParticle(Color clr, string str)
     { 
+        GameObject temp = Instantiate(Prefub,transform.position, UnityEngine.Quaternion.identity);
 
-
-        ApplyAcceleration.addParticle(Instantiate(Prefub,transform.position, UnityEngine.Quaternion.identity), clr, str);
+        ParticleController.addParticle(temp, clr, str);
 
 
     }
