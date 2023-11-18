@@ -13,12 +13,14 @@ public class TheParticle : MonoBehaviour
 
 
 
+
+
     public TheParticle(GameObject objct, UnityEngine.Vector3 thrust, int type)
     {
         this.obj = objct;
         this.type = type;
         this.obj.GetComponent<Rigidbody>().AddForce(thrust);
-    
+
 
 
         //this.GetComponent<MeshRenderer>().material.SetColor("Material1",colors[type]);
