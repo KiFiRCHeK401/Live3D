@@ -8,11 +8,11 @@ public class CamMuvie : MonoBehaviour
 {
     public static int test;
 
-    float Speed = 0.04f;
-    float maxSpeed = 0.04f;
-    float thrust = 0.01f;
-    Vector3 targetVector = new Vector3(0,0,0);
-    Vector3 motionVector = new Vector3(0, 0, 0);
+    private static float Speed = 0.04f;
+    private static float maxSpeed = 0.04f;
+    private static float  thrust = 0.01f;
+    private static Vector3 targetVector = new Vector3(0,0,0);
+    public static Vector3 motionVector = new Vector3(0, 0, 0);
     
 
     Vector3 lastMousePos = Vector3.zero;

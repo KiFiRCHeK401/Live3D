@@ -32,9 +32,9 @@ public class ParticleController : MonoBehaviour
         theParticles.Clear();
     }
 
-    public static void addParticle(GameObject obj, Color color, string str)
+    public static void addParticle(GameObject obj, UnityEngine.Vector3 thrust, int type)
     {
         //testList.Add(new TheParticle(obj,color,str));
-        theParticles.Add(new TheParticle(obj,color,str));
+        theParticles.Add(new TheParticle(obj,thrust,type));
     }
 }

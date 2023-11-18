@@ -10,19 +10,12 @@ public class Spawner : MonoBehaviour
 {
     public static double deltaTime = 0;
     public GameObject Prefub;
-
     
     
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
         if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; } // ��������
@@ -30,14 +23,17 @@ public class Spawner : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))           // ��������          //Добавить частицу
         {
-            
-            SpawnParticle(Color.red, "red");
+
+            UnityEngine.Vector3 firstAngle = new UnityEngine.Vector3(0.3f,0.3f,0.3f);
+            UnityEngine.Vector3 secondAngle = new UnityEngine.Vector3(-0.3f,-0.3f,-0.3f);
+            UnityEngine.Vector3 thrust = new UnityEngine.Vector3(5,5,5);
+            for(int i=0;i<100;i++)
+            {
+                UnityEngine.Vector3 pos = GeneratePosition(firstAngle,secondAngle);
+                SpawnParticle(pos, thrust,1);
+            }
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))                            //�������� ����������
-        {
-           ParticleController.DeleteLastParticle();                        //удаление последней частицы
-        }
 
         if (Input.GetKey(KeyCode.LeftControl))                         //�������� ���� ��������
         {
@@ -49,15 +45,43 @@ public class Spawner : MonoBehaviour
 
 
 
+    // public void SpawnParticle1(UnityEngine.Vector3 pos , UnityEngine.Vector3 thrust , int count)
+    // {
+    //     UnityEngine.Vector3 firstAngle = new UnityEngine.Vector3(0.3f,0.3f,0.3f);
+    //     UnityEngine.Vector3 secondAngle = new UnityEngine.Vector3(0.3f,0.3f,0.3f);
+        
+
+    //     for(int i=0;i<100;i++)
+    //     {
+    //         UnityEngine.Vector3 pos = GeneratePosition(firstAngle,secondAngle);
+    //         SpawnParticle(pos, thrust,1);
+    //     }
+        
+    // }
 
 
 
-    public void SpawnParticle(Color clr, string str)
+
+
+
+
+    public UnityEngine.Vector3 GeneratePosition(UnityEngine.Vector3 firstAngle, UnityEngine.Vector3 secondAngle)
+    {
+        System.Random rnd = new System.Random();
+
+        float x;    
+        float y;
+        float z;
+
+        x = (float)rnd.NextDouble()*(firstAngle.x-secondAngle.x)+secondAngle.x;
+        y = (float)rnd.NextDouble()*(firstAngle.y-secondAngle.y)+secondAngle.y;
+        z = (float)rnd.NextDouble()*(firstAngle.z-secondAngle.z)+secondAngle.z;
+        return new UnityEngine.Vector3(x,y,z);
+    }
+    public void SpawnParticle(UnityEngine.Vector3 position, UnityEngine.Vector3 thrust, int type)
     { 
-        GameObject temp = Instantiate(Prefub,transform.position, UnityEngine.Quaternion.identity);
-
-        ParticleController.addParticle(temp, clr, str);
-
+        GameObject temp = Instantiate(Prefub,position, UnityEngine.Quaternion.identity);
+        ParticleController.addParticle(temp, thrust, type);
 
     }
 }

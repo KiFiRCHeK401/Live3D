@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class TheParticle : MonoBehaviour
 {
-
+    private List<Color> colors =new List<Color>{Color.red,Color.blue,Color.white,Color.black, Color.yellow};
     private GameObject obj;
-    private Color ColorType;
+    private int type;
     public HashSet<Rigidbody> IncludedRigidbodies = new HashSet<Rigidbody>();
 
 
 
-    public TheParticle(GameObject objct, Color ColorType,string typeName)
+    public TheParticle(GameObject objct, UnityEngine.Vector3 thrust, int type)
     {
         this.obj = objct;
-        this.ColorType = ColorType;
-        //this.GetComponent<Renderer>().material.SetColor(typeName, ColorType);
+        this.type = type;
+        this.obj.GetComponent<Rigidbody>().AddForce(thrust);
+    
+
+
+        //this.GetComponent<MeshRenderer>().material.SetColor("Material1",colors[type]);
     }
     ~TheParticle()
     {
