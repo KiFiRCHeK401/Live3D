@@ -1,17 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ParticleController : MonoBehaviour
 {
     
     public static List<TheParticle> theParticles = new List<TheParticle>();
-
+    public List<TMP_InputField> matrix;
     //public static List<TheParticle> testList = new List<TheParticle>();
 
-    void Update()
+    private void Update()
     {
-        //добавить всякие там ускорения и вхождения в поле взаимодействия
+        
+        Calculate();
+    }
+
+
+    private void Calculate()
+    {
+        
+
+        for(int i=0;i<theParticles.Count-1;i++)
+        {
+
+        }
     }
 
     public static void DeleteLastParticle()                                    //Удаление последней частицы

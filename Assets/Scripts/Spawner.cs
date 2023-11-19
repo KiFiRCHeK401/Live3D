@@ -29,6 +29,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(ShowPanel.open)
+        {
+            return;
+        }
         
         if(deltaTime < 0.1f ) { deltaTime += Time.deltaTime; return; } // ��������
         if (Input.anyKey) { 

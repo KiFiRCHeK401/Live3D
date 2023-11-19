@@ -36,6 +36,11 @@ public class CamMuvie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ShowPanel.open)
+        {
+            return;
+        }
+        
         CamControl();
 
         CamMuve();
