@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class ParticleController : MonoBehaviour
 {
-    
+    public TMP_Text countParticles;
     public static List<TheParticle> theParticles = new List<TheParticle>();
     public List<TMP_InputField> matrix;
     //public static List<TheParticle> testList = new List<TheParticle>();
 
     private void Update()
     {
-        
+        //countParticles.text = theParticles.Count.ToString();
         Calculate();
     }
+
+    // private void OnTriggerEnter(Collider other){
+    //     countParticles.text = "yes";
+    // }
 
 
     private void Calculate()

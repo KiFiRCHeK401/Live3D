@@ -42,7 +42,10 @@ public class Spawner : MonoBehaviour
             }
             else return;
          }
-        else return;
+        else {
+            deltaTime = 1;
+            return;
+        }
 
         int type =0;
         int count = Math.Abs(Convert.ToInt32(Amount.text));
