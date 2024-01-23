@@ -21,6 +21,7 @@ public class ShowPanel : MonoBehaviour
         {
             open = !open;
             SwitchPanel();
+            
         }
 
 
