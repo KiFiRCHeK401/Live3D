@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using System.Linq;
 
 public class SendMatrix : MonoBehaviour
 {
@@ -30,12 +32,35 @@ public class SendMatrix : MonoBehaviour
         
     }
 
-    //public void SendMatrix_()
-    //{
-    //    GetComponent<ParticleController>().GetMatrix(_matrix);
-    //    Debug.Log("Отправлено");
-    //}
+
+    public void SaveMtrx()
+    {
+        string str = "";
+        foreach (TMP_InputField tmp in _matrix)
+        {
+            str += tmp.text+"|"; ;
+        }
+        PlayerPrefs.SetString("matrix",str);
+
+    }
+
+
+    public void UpLoad()
+    {
+        string str = PlayerPrefs.GetString("matrix");
+        List<string> list = str.Split(new string[] { "|" }, StringSplitOptions.None).ToList();
+
+        int i = 0;
+
+        foreach (string str2 in list)
+        {
+            _matrix[i].text = str2;
+            i++;
+        }
+    }
 
 
 
+
+    //рандомная генерация матрицы
 }
